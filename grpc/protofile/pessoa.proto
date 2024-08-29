@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package ="grpc/pb";
+
+message Pessoa {
+	string nome = 1;
+}
+
+message PessoaResut {
+	string id = 1;
+	string nome = 2;
+}
+
+service PessoaService {
+	rpc CreatePessoa(Pessoa) returns (PessoaResut) {};
+}
